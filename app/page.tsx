@@ -37,7 +37,7 @@ export default function Page() {
   };
 
   const lastMessage = messages[messages.length - 1];
-  const generatedBios = lastMessage?.role === "assistant" ? lastMessage.content : null;
+  const generatedBios = lastMessage?.role === "assistant" ? [body.messages.length - 1].content : null;
 
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
