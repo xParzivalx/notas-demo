@@ -36,7 +36,6 @@ export default function Page() {
     handleSubmit(e);
   };
   
-  const body = await req.json() console.log(body)
   const lastMessage = messages[body.messages.length - 1];
   const generatedBios = lastMessage?.role === "assistant" ? lastMessage.content : null;
 
