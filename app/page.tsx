@@ -83,7 +83,7 @@ export default function Page() {
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
             placeholder={
-              'e.g. Senior Developer Advocate @vercel. Tweeting about web development, AI, and React / Next.js. Writing nutlope.substack.com.'
+              How to become viral on TikTok in 3 easy steps
             }
           />
           <div className="flex mb-5 items-center space-x-3">
@@ -142,7 +142,7 @@ export default function Page() {
                         className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                         onClick={() => {
                           navigator.clipboard.writeText(generatedBio);
-                          toast('Bio copied to clipboard', {
+                          toast('Text copied to clipboard', {
                             icon: '✂️',
                           });
                         }}
