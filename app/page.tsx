@@ -83,7 +83,7 @@ export default function Page() {
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
             placeholder={
-              How to become viral on TikTok in 3 easy steps
+              'How to become viral on TikTok in 3 easy steps'
             }
           />
           <div className="flex mb-5 items-center space-x-3">
