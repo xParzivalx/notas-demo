@@ -35,9 +35,10 @@ export default function Page() {
     setBio(input);
     handleSubmit(e);
   };
-
-  const lastMessage = messages[messages.length - 1];
-  const generatedBios = lastMessage?.role === "assistant" ? [body.messages.length - 1].content : null;
+  
+  const body = await req.json() console.log(body)
+  const lastMessage = messages[body.messages.length - 1];
+  const generatedBios = lastMessage?.role === "assistant" ? lastMessage.content : null;
 
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
