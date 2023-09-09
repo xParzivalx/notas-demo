@@ -36,7 +36,7 @@ export default function Page() {
     handleSubmit(e);
   };
   
-  const lastMessage = messages[messages.length];
+  const lastMessage = messages[messages.length - 1];
   const generatedBios = lastMessage?.role === "assistant" ? lastMessage.content : null;
 
   return (
