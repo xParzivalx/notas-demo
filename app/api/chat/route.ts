@@ -22,7 +22,7 @@ export async function POST(req: Request) {
         role: 'user',
         content: `Generate 2 ${vibe} texts with. ${
           vibe === 'Persuasive'
-            ? "Make sure you are writing persuasive, that you sell with maximum persuasion and use of word."
+            ? "Make sure you write with spacings, markdown and headings."
             : null
         }
           Make sure each generated texts are at least 1000 characters, based on this context or title: ${bio}${
