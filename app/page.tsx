@@ -150,7 +150,7 @@ export default function Page() {
                         }}
                         key={index}
                       >
-                        <ReactMarkdown plugins={[remarkGfm]} children={generatedBio} />
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{generatedBio}</ReactMarkdown>
                       </div>
                     );
                   })}
