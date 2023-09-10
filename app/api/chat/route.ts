@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `Generate 2 ${vibe} texts and clearly labeled "1." and "2.". ${
+        content: `Generate 1 ${vibe} text with Mardown and clearly with spacings and headers. ${
           vibe === 'Persuasive'
             ? "Make sure you are writing persuasive, that you sell with maximum persuasion and use of word."
             : null
