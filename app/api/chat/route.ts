@@ -20,12 +20,12 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `Generate 1 ${vibe} text with Mardown format and clearly with spacings and headers. ${
+        content: `Generate 1 ${vibe} clearly with spacings and headers. ${
           vibe === 'Persuasive'
             ? "Make sure you are writing persuasive, that you sell with maximum persuasion and use of word."
             : null
         }
-          Make sure you are using Markdown style for ##headings and important words in *bold*.
+          Make sure you are using Markdown style for ## headings and important words in *bold*, and | for | tables |.
           Make sure each generated texts are at least 1000 characters, based on this context or title: ${bio}${
           bio.slice(-1) === '.' ? '' : '.'
         }`,
