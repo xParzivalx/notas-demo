@@ -9,6 +9,9 @@ import Github from '../components/GitHub';
 import Header from '../components/Header';
 import { useChat } from 'ai/react';
 
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 export default function Page() {
   const bio = useRef<string | null>(null);
   const [vibe, setVibe] = useState<VibeType>('Professional');
@@ -37,7 +40,7 @@ export default function Page() {
 
   const handleInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     bio.current = e.target.value;
-		handleInputChange(e);
+    handleInputChange(e);
   };
 
   const lastMessage = messages[messages.length - 1];
@@ -53,7 +56,6 @@ export default function Page() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          
           <p>notas.ai</p>
         </a>
         <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
@@ -136,19 +138,19 @@ export default function Page() {
                 {generatedBios
                   .substring(generatedBios.indexOf('1') + 3)
                   .split('2.')
-                  .map((generatedBio) => {
+                  .map((generatedBio, index) => {
                     return (
                       <div
-                        className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
+                        className="bg-white p-4 transition"
                         onClick={() => {
                           navigator.clipboard.writeText(generatedBio);
                           toast('Text copied to clipboard', {
                             icon: '✂️',
                           });
                         }}
-                        key={generatedBio}
+                        key={index}
                       >
-                        <p>{generatedBio}</p>
+                        <ReactMarkdown plugins={[remarkGfm]} children={generatedBio} />
                       </div>
                     );
                   })}
