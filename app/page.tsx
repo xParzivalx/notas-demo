@@ -134,7 +134,7 @@ export default function Page() {
                   Your generated results
                 </h2>
               </div>
-              <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
+              <div className="prose mt-1 w-full break-words prose-p:leading-relaxed">
                 {generatedBios
                   .substring(generatedBios.indexOf('1') + 3)
                   .split('2.')
@@ -150,7 +150,7 @@ export default function Page() {
                         }}
                         key={index}
                       >
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{generatedBio}</ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{generatedBio}</ReactMarkdown> 
                       </div>
                     );
                   })}

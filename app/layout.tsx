@@ -1,6 +1,8 @@
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import '../styles/globals.css';
+import { ClerkProvider } from "@clerk/nextjs";
+
 
 const title = 'Copywriter - NotasAI';
 const description = 'Generate your text in seconds.';
@@ -28,11 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body>
         {children}
         <Analytics />
       </body>
     </html>
+    </ClerkProvider>
   );
 }

@@ -25,8 +25,8 @@ export async function POST(req: Request) {
             ? "Make sure you are writing persuasive, that you sell with maximum persuasion and use of word."
             : null
         }
-          Make sure you are using Markdown style for ## headings and important words in *bold*, and | for | tables |.
-          Make sure each generated texts are at least 1000 characters, based on this context or title: ${bio}${
+          Make sure you are using Markdown style for ## Headings and important words in **bold** or *italic*,
+          Make sure each generated texts are at least 2000 characters, based on this context or title: ${bio}${
           bio.slice(-1) === '.' ? '' : '.'
         }`,
       },
