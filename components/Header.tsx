@@ -4,10 +4,9 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="flex justify-between items-center w-full mt-5 border-b-2 pb-7 sm:px-4 px-2">
-      <Link href="/" className="flex space-x-3">
-        <h1 className="sm:text-2xl text-2xl font-bold ml-2 tracking-tight">
-          NotasAI
-        </h1>
+      <Link href="https://notas.ai" className="flex space-x-3">
+      <p className="" style={{ fontSize: '25px', fontWeight: '500' }}>NotasAI</p>
+
       </Link>
       <a
         href="https://twitter.com/notas_ia"

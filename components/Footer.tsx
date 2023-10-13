@@ -6,14 +6,6 @@ export default function Footer() {
       <div>
         Powered by{' '}
         <a
-          href="https://focusai.io"
-          target="_blank"
-          className="font-bold hover:underline transition underline-offset-2"
-        >
-          FocusAI{' '}
-        </a>
-        at{' '}
-        <a
           href="https://notas.ai"
           target="_blank"
           className="font-bold hover:underline transition underline-offset-2"

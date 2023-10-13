@@ -1,11 +1,15 @@
-import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import '../styles/globals.css';
-import { ClerkProvider } from "@clerk/nextjs";
+import "../styles/global.css";
+import "../styles/page.module.css";
 
+import {
+  getKindeServerSession,
+} from "@kinde-oss/kinde-auth-nextjs/server";
+import Link from "next/link";
 
 const title = 'Copywriter - NotasAI';
-const description = 'Generate your text in seconds.';
+const description = 'Genera textos en segundos.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://copy.notas.ai'),
@@ -14,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    locale: 'en_US',
+    locale: 'es_ES',
     type: 'website',
   },
   twitter: {
@@ -29,14 +33,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { getUser } = getKindeServerSession();
+  const user = getUser();
   return (
-    <ClerkProvider>
     <html lang="en">
       <body>
         {children}
-        <Analytics />
       </body>
     </html>
-    </ClerkProvider>
   );
 }

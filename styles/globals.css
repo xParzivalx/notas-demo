@@ -42,3 +42,21 @@
     opacity: 0.2;
   }
 }
+
+body {
+  background-color: var(--novel-white);
+}
+
+.btn-big {
+  font-size: 17px !important;
+  padding: 16px !important;
+}
+
+.hero {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 32rem !important;
+  justify-content: center;
+  text-align: center;
+}
