@@ -11,10 +11,9 @@ import {
 export default function Home() {
   const { getUser, isAuthenticated } = getKindeServerSession();
   const user = getUser();
-
   return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
     <div className="container">
-      <Header />
       <div className="flex justify-between p-5">
         <a
           href="https://notas.ai"
@@ -46,7 +45,6 @@ export default function Home() {
           </>
         )}
       </div>
-      <Footer />
     </div>
   );
 }
