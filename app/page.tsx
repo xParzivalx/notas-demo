@@ -9,7 +9,8 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default function Home() {
-  const { isAuthenticated } = getKindeServerSession();
+  const { getUser, isAuthenticated } = getKindeServerSession();
+  const user = getUser();
   return (
     
 <div className="container">
