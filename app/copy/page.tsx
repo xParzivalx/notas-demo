@@ -139,7 +139,7 @@ export default function Page() {
                   className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto"
                   ref={bioRef}
                 >
-                  Resultados generados
+                  Your generated results
                 </h2>
               </div>
               <div className="prose mt-1 w-full break-words prose-p:leading-relaxed">
@@ -152,7 +152,9 @@ export default function Page() {
                         className="bg-white p-4 transition"
                         onClick={() => {
                           navigator.clipboard.writeText(generatedBio);
-                          toast('Copiado!',
+                          toast('Text copied to clipboard', {
+                            icon: '✂️',
+                          });
                         }}
                         key={index}
                       >
