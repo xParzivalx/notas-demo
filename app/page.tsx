@@ -11,10 +11,11 @@ import {
 export default function Home() {
   const { getUser, isAuthenticated } = getKindeServerSession();
   const user = getUser();
+
   return (
-    
-<div className="container">
-<div className="flex justify-between p-5">
+    <div className="container">
+      <Header />
+      <div className="flex justify-between p-5">
         <a
           href="https://notas.ai"
           target="_blank"
@@ -23,28 +24,29 @@ export default function Home() {
           <NotasAI />
         </a>
       </div>
-  <div className="card hero">
-    <p className="text-display-1 hero-title">
-      Notas Copywriter
-    </p>
-    {!isAuthenticated() ? (
-      <>
-      <p className="text-xm hero-tagline">by <a href="https://notas.ai" >notas.ai</a></p>
-        <div className="flex items-center justify-center">
-          <LoginLink className="btn btn-light btn-big mr-2">Entrar</LoginLink>
-          <a href="https://notas.ai/pricing" className="btn btn-light btn-big">Suscribirse</a>
-        </div>
-      </>
-    ) : (
-      <>
-      <p className="text-xm hero-tagline">by <a href="https://notas.ai" >notas.ai</a></p>
-      <div className="flex items-center">
-        <LogoutLink className="btn btn-light btn-big mr-2">Cerrar sesión</LogoutLink>
-        <a href="/copy" className="btn btn-light btn-big">Abrir ahora</a>     
+      <div className="card hero">
+        <p className="text-display-1 hero-title">
+          Notas Copywriter
+        </p>
+        {!isAuthenticated() ? (
+          <>
+            <p className="text-xm hero-tagline">by <a href="https://notas.ai" >notas.ai</a></p>
+            <div className="flex items-center justify-center">
+              <LoginLink className="btn btn-light btn-big mr-2">Entrar</LoginLink>
+              <a href="https://notas.ai/pricing" className="btn btn-light btn-big">Suscribirse</a>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className="text-xm hero-tagline">by <a href="https://notas.ai" >notas.ai</a></p>
+            <div className="flex items-center">
+              <LogoutLink className="btn btn-light btn-big mr-2">Cerrar sesión</LogoutLink>
+              <a href="/copy" className="btn btn-light btn-big">Abrir ahora</a>     
+            </div>
+          </>
+        )}
       </div>
-      </>
-    )}
-  </div>
-</div>
+      <Footer />
+    </div>
   );
 }
