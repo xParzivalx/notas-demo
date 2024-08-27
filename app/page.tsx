@@ -6,13 +6,14 @@ import {
   getKindeServerSession,
   LoginLink,
   LogoutLink,
-} from "@kinde-oss/kinde-auth-nextjs/server";
+ } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default function Home() {
-  const { isAuthenticated } = getKindeServerSession();
-  return (
-    
-<div className="container">
+ export default function Home() {
+   const { getUser, isAuthenticated } = getKindeServerSession();
+   const user = getUser();
+   return (
+
+ <div className="container">
 <div className="flex justify-between p-5">
         <a
           href="https://notas.ai"
@@ -43,7 +44,7 @@ export default function Home() {
       </div>
       </>
     )}
-  </div>
-</div>
-  );
+   </div>
+ </div>
+   );
 }
